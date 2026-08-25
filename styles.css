@@ -52,18 +52,30 @@
 
 :root,
 [data-theme="light"] {
-  --bg-color: #fff;
+  --bg-image-mobile: url(./assets/images/pattern-background-mobile-light.svg);
+  --bg-image-tablet: url(./assets/images/pattern-background-tablet-light.svg);
+  --bg-image-desktop: url(./assets/images/pattern-background-desktop-light.svg);
+  --bg-color: var(--grey-50);
   --icon-color: var(--grey-500);
+  --subject-item: white;
+  --heading-color: var(--blue-950);
+  --subheading-color: var(--grey-500);
 }
 
 [data-theme="dark"] {
-  --bg-color: #2d3949;
+  --bg-image-mobile: url(./assets/images/pattern-background-mobile-dark.svg);
+  --bg-image-tablet: url(./assets/images/pattern-background-tablet-dark.svg);
+  --bg-image-desktop: url(./assets/images/pattern-background-desktop-dark.svg);
+  --bg-color: var(--blue-900);
   --icon-color: white;
+  --subject-item: var(--blue-850);
+  --heading-color: white;
+  --subheading-color: var(--blue-300);
 }
 
 body {
-  background-color: var(--grey-50);
-  background-image: url("./assets/images/pattern-background-mobile-light.svg");
+  background-color: var(--bg-color);
+  background-image: var(--bg-image-mobile);
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -85,6 +97,17 @@ body {
 
     --text-preset-6-size: 20px;
     --text-preset-6-lh: 1.5;
+  }
+
+  body {
+    background-image: var(--bg-image-tablet);
+    background-position: left top;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: var(--bg-image-desktop);
   }
 }
 
@@ -133,6 +156,7 @@ body {
   font-style: var(--font-italic);
   font-size: var(--text-preset-5-size);
   line-height: var(--text-preset-5-lh);
+  color: var(--subheading-color);
 }
 
 .preset-5-regular {
@@ -246,7 +270,6 @@ body {
   width: 40px;
   height: 40px;
   background-color: var(--purple-100);
-
   border-radius: 4px;
 }
 
@@ -276,6 +299,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  color: var(--heading-color);
 }
 
 /* SUBJECT CONTAINER */
@@ -289,7 +313,7 @@ body {
 }
 
 .subject__item {
-  background-color: white;
+  background-color: var(--subject-item);
   align-items: center;
   justify-content: flex-start;
   width: 100%;
@@ -300,15 +324,30 @@ body {
 }
 
 .subject__item span {
-  color: var(--blue-900);
+  color: var(--heading-color);
 }
 
 .subject-icon__container {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--orange-50);
   width: 40px;
   height: 40px;
   border-radius: 0.5rem;
+}
+
+.html {
+  background-color: var(--orange-50);
+}
+
+.css {
+  background-color: var(--green-100);
+}
+
+.javascript {
+  background-color: var(--blue-50);
+}
+
+.accessibility {
+  background-color: var(--purple-100);
 }
