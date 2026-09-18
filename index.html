@@ -76,8 +76,16 @@
 
       <!-- Quiz Menu Subjects -->
 
-      <div class="subject__container">
-        <div class="subject__item">
+      <fieldset class="subject__container">
+        <legend class="visually-hidden">Quiz subject options</legend>
+
+        <label class="subject__item">
+          <input
+            class="visually-hidden"
+            type="radio"
+            name="subject"
+            value="html"
+          />
           <div class="subject-icon__container html">
             <svg
               width="24"
@@ -93,8 +101,15 @@
             </svg>
           </div>
           <span class="preset-4">HTML</span>
-        </div>
-        <div class="subject__item">
+        </label>
+
+        <label class="subject__item">
+          <input
+            class="visually-hidden"
+            type="radio"
+            name="subject"
+            value="css"
+          />
           <div class="subject-icon__container css">
             <svg
               width="17"
@@ -110,8 +125,15 @@
             </svg>
           </div>
           <span class="preset-4">CSS</span>
-        </div>
-        <div class="subject__item">
+        </label>
+
+        <label class="subject__item">
+          <input
+            class="visually-hidden"
+            type="radio"
+            name="subject"
+            value="javascript"
+          />
           <div class="subject-icon__container javascript">
             <svg
               width="22"
@@ -127,8 +149,15 @@
             </svg>
           </div>
           <span class="preset-4">Javascript</span>
-        </div>
-        <div class="subject__item">
+        </label>
+
+        <label class="subject__item">
+          <input
+            class="visually-hidden"
+            type="radio"
+            name="subject"
+            value="accessibility"
+          />
           <div class="subject-icon__container accessibility">
             <svg
               width="22"
@@ -144,8 +173,8 @@
             </svg>
           </div>
           <span class="preset-4">Accessibility</span>
-        </div>
-      </div>
+        </label>
+      </fieldset>
     </div>
     <!-- Quiz menu end -->
 

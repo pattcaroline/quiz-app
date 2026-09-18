@@ -81,36 +81,6 @@ body {
   background-position: center;
 }
 
-@media (min-width: 768px) {
-  :root {
-    /* Tablet and Desktop typograhy */
-    --text-preset-1-size: 144px;
-
-    --text-preset-2-size: 64px;
-
-    --text-preset-3-size: 36px;
-    --text-preset-3-lh: 1.2;
-
-    --text-preset-4-size: 28px;
-
-    --text-preset-5-size: 24px;
-
-    --text-preset-6-size: 20px;
-    --text-preset-6-lh: 1.5;
-  }
-
-  body {
-    background-image: var(--bg-image-tablet);
-    background-position: left top;
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    background-image: var(--bg-image-desktop);
-  }
-}
-
 .preset-1 {
   font-family: var(--font-primary);
   font-weight: var(--weight-medium);
@@ -303,6 +273,24 @@ body {
 }
 
 /* SUBJECT CONTAINER */
+fieldset {
+  border: none;
+  width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 .subject__container {
   display: flex;
   flex-direction: column;
@@ -325,6 +313,10 @@ body {
 
 .subject__item span {
   color: var(--heading-color);
+}
+
+.subject__item:has(input:checked) {
+  box-shadow: inset 0 0 0 2px var(--purple-600);
 }
 
 .subject-icon__container {
@@ -350,4 +342,82 @@ body {
 
 .accessibility {
   background-color: var(--purple-100);
+}
+
+@media (min-width: 768px) {
+  :root {
+    /* Tablet and Desktop typograhy */
+    --text-preset-1-size: 144px;
+
+    --text-preset-2-size: 64px;
+
+    --text-preset-3-size: 36px;
+    --text-preset-3-lh: 1.2;
+
+    --text-preset-4-size: 28px;
+
+    --text-preset-5-size: 24px;
+
+    --text-preset-6-size: 20px;
+    --text-preset-6-lh: 1.5;
+  }
+
+  body {
+    background-image: var(--bg-image-tablet);
+    background-position: left top;
+  }
+
+  .theme-toggle__container {
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .quiz-menu {
+    max-width: 640px;
+    margin-inline: auto;
+    gap: 4rem;
+  }
+
+  .subject__container {
+    gap: 1.5rem;
+  }
+
+  .subject__item {
+    gap: 2rem;
+  }
+
+  .subject-icon__container {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: var(--bg-image-desktop);
+  }
+  .quiz-menu {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 128px;
+    max-width: 1160px;
+    margin-inline: auto;
+  }
+
+  .quiz-menu__container {
+    gap: 3rem;
+  }
+
+  .theme-toggle__container {
+    max-width: 1160px;
+    margin-inline: auto;
+  }
+  .subject__item {
+    padding: 1.5rem;
+  }
+
+  .subject__container {
+    flex: 1;
+    max-width: 100%;
+  }
 }
