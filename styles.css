@@ -48,6 +48,8 @@
 
   --text-preset-5-size: 14px;
   --text-preset-5-lh: 1.5;
+
+  --toggle-icon-mobile: 16px;
 }
 
 :root,
@@ -170,8 +172,8 @@ body {
 }
 
 .theme-icon {
-  width: 16px;
-  height: 16px;
+  width: var(--toggle-icon-mobile);
+  height: var(--toggle-icon-mobile);
   color: var(--icon-color);
   transition: color 0.3s ease;
 }
@@ -311,6 +313,20 @@ fieldset {
   border-radius: 12px;
 }
 
+/* Hide native checkbox visually, but keep it accessible */
+.subject__item input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* Keyboard Focus state */
+.subject__item:has(input[type="radio"]:focus-visible) {
+  outline: 2px solid var(--purple-600);
+  outline-offset: 2px;
+}
+
 .subject__item span {
   color: var(--heading-color);
 }
@@ -326,6 +342,11 @@ fieldset {
   width: 40px;
   height: 40px;
   border-radius: 0.5rem;
+}
+
+.subject-icon {
+  width: 21px;
+  height: 21px;
 }
 
 .html {
@@ -360,6 +381,9 @@ fieldset {
 
     --text-preset-6-size: 20px;
     --text-preset-6-lh: 1.5;
+
+    --toggle-icon-tablet: 24px;
+    --subject-icon-tablet: 40px;
   }
 
   body {
@@ -370,12 +394,23 @@ fieldset {
   .theme-toggle__container {
     max-width: 640px;
     margin-inline: auto;
+    padding: 2rem 0;
+  }
+
+  .toggle__container {
+    gap: 1rem;
+  }
+
+  .theme-icon {
+    width: var(--toggle-icon-tablet);
+    height: var(--toggle-icon-tablet);
   }
 
   .quiz-menu {
     max-width: 640px;
     margin-inline: auto;
     gap: 4rem;
+    padding: 0;
   }
 
   .subject__container {
@@ -389,6 +424,12 @@ fieldset {
   .subject-icon__container {
     width: 56px;
     height: 56px;
+  }
+
+  .subject-icon {
+    width: var(--subject-icon-tablet);
+    height: var(--subject-icon-tablet);
+    padding: 0.25rem;
   }
 }
 
