@@ -19,25 +19,28 @@ themeCheckbox.addEventListener("change", (e) => {
 
 /////////////////////// Hide Welcome Quiz Start Page
 const quizWelcome = document.getElementById("quiz-menu");
+const questionsDisplay = document.getElementById("questions");
 
 function hideWelcomePage(e) {
   quizWelcome.classList.add("visually-hidden");
+  questionsDisplay.classList.remove("visually-hidden");
 }
 
 // Display Header Subject Selected
 
 function setQuestionThemeHeader(subject) {
-  const themeContainer = document.getElementById("theme__container");
-  themeContainer.className = "theme__container";
-  themeContainer.id = "questions-theme";
-  themeContainer.innerHTML = `
+  const themeHeaderContainer = document.getElementById("theme__container");
+  const themeHeaderContent = document.createElement("div");
+  themeHeaderContent.className = "theme__container";
+  themeHeaderContent.id = "questions-theme";
+  themeHeaderContent.innerHTML = `
        <div class="theme-image-bg ${subject}">
           <img src="./assets/images/icon-${subject}.svg" alt="" />
        </div>
       <p class="preset-4">${subject}</p>
   `;
 
-  themeContainer.insertAdjacentElement("afterbegin");
+  themeHeaderContainer.insertAdjacentElement("afterbegin", themeHeaderContent);
 }
 
 subjectFieldset.addEventListener("change", (e) => {
