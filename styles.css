@@ -113,6 +113,7 @@ body {
   font-size: var(--text-preset-3-size);
   line-height: var(--text-preset-3-lh);
   letter-spacing: var(--letter-spacing);
+  color: var(--blue-900);
 }
 
 .preset-4 {
@@ -154,6 +155,7 @@ body {
   font-size: var(--text-preset-6-size);
   line-height: var(--text-preset-6-lh);
   letter-spacing: var(--letter-spacing);
+  color: var(--subheading-color);
 }
 
 /* THEME and TOGGLE Container */
@@ -233,6 +235,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  color: var(--heading-color);
 }
 
 .theme-image-bg {
@@ -311,6 +314,7 @@ fieldset {
   padding: 1rem;
   gap: 1rem;
   border-radius: 12px;
+  color: var(--heading-color);
 }
 
 /* Hide native checkbox visually, but keep it accessible */
@@ -327,9 +331,9 @@ fieldset {
   outline-offset: 2px;
 }
 
-.subject__item span {
+/* .subject__item span  {
   color: var(--heading-color);
-}
+} */
 
 .subject__item:has(input:checked) {
   box-shadow: inset 0 0 0 2px var(--purple-600);
