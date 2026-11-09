@@ -162,28 +162,56 @@
 
     <!--------------------- Questions START ------------------------------------>
     <div class="questions visually-hidden" id="questions">
-      <div class="quiz-menu">
-        <div class="quiz-menu__container">
-          <span class="preset-6">Question 1 of 10</span>
-          <p class="preset-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nobis
-            odio iure dicta enim dignissimos amet ullam?
-          </p>
-          <span class="progress-bar"></span>
+      <div class="question__container">
+        <span class="preset-6">Question 1 of 10</span>
+        <p class="preset-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nobis
+          odio iure dicta enim dignissimos amet ullam?
+        </p>
+        <div class="progress-bar__container">
+          <span class="progress-bar__progress"></span>
         </div>
       </div>
-      <div class="subject__container">
-        <div>
-          <p>A</p>
-          <p>Answers option</p>
-          <img src="./assets/images/icon-correct.svg" alt="correct icon" />
-        </div>
-        <button>Submit Answer</button>
+
+      <fieldset class="answer-option__container" id="#">
+        <legend class="visually-hidden">Answer options</legend>
+
+        <label class="answer-option__rectangle">
+          <input type="radio" name="subject" value="A" />
+          <div class="letter-option A">
+            <div class="letter-option__bg">
+              <p class="preset-4 grey">A</p>
+            </div>
+            <span class="preset-4">4.5:1</span>
+          </div>
+          <img
+            src="./assets/images/icon-correct.svg"
+            alt="correct icon"
+            class="icon-correct"
+          />
+        </label>
+
+        <label class="answer-option__rectangle error">
+          <input type="radio" name="subject" value="A" />
+          <div class="letter-option A">
+            <div class="letter-option__bg">
+              <p class="preset-4 grey">A</p>
+            </div>
+            <span class="preset-4">4.5:1</span>
+          </div>
+          <img
+            src="./assets/images/icon-correct.svg"
+            alt="correct icon"
+            class="icon-correct"
+          />
+        </label>
+
+        <button class="submit-btn preset-4">Submit Answer</button>
         <span class="error-empty-field">
           <img src="./assets/images/icon-error.svg" alt="" /> Please select an
           answer</span
         >
-      </div>
+      </fieldset>
     </div>
     <!--------------------------- Questions End ------------------------------->
 
